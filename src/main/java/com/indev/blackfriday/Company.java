@@ -5,11 +5,17 @@ public class Company {
     Capsule capsule;
     Machine machine;
 
-    public float sells(String capsule) {
-        return 0;
+    public float sells(String product) {
+        if (product.equals("machine")) {
+            return machine.sells();
+        } else if (product.equals("capsule")) {
+            return capsule.sells();
+        } else {
+            throw new IllegalArgumentException(product + " is not a valid product name");
+        }
     }
 
-    public void stock(int price, String product, int quantity) {
+    public void stock(int quantity, String product, int price) {
         if (product.equals("machine")) {
             machine = new Machine(quantity, price);
 
@@ -34,7 +40,7 @@ public class Company {
 
     private int machineAssert() {
         if (machine != null) {
-            return machine.countAsserts();
+            return (int) machine.countAsserts();
         }
         return 0;
     }
@@ -42,7 +48,7 @@ public class Company {
 
     private int capsuleAssert() {
         if (capsule != null) {
-            return capsule.countAsserts();
+            return (int) capsule.countAsserts();
         }
         return 0;
     }
