@@ -4,12 +4,13 @@ public class Company {
 
     Capsule capsule;
     Machine machine;
+    boolean isBlackFriday = false;
 
     public float sells(String product) {
         if (product.equals("machine")) {
-            return machine.sells();
+            return machine.sells(isBlackFriday);
         } else if (product.equals("capsule")) {
-            return capsule.sells();
+            return capsule.sells(isBlackFriday);
         } else {
             throw new IllegalArgumentException(product + " is not a valid product name");
         }
@@ -55,6 +56,7 @@ public class Company {
 
 
     public Company blackFriday() {
-        return this;
+        this.isBlackFriday = true;
+        return  this;
     }
 }
