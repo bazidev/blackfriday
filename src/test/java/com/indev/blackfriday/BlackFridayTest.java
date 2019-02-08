@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
     The company can sell a given product at a fixed quantity and have a price sale margin of 20%
     In black friday, the company is selling two times the usual quantity (10 instead of 5) but have only a price sale margin of 10%
  */
-public class BlackFriday {
+public class BlackFridayTest {
 
     /*
         Total assets is the total of money owned by the company
